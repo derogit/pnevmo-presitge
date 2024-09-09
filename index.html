@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Local project</title>
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <script>
+      !(function (t) {
+        "use strict";
+        t.loadCSS || (t.loadCSS = function () {});
+        var e = (loadCSS.relpreload = {});
+        if (
+          ((e.support = (function () {
+            var e;
+            try {
+              e = t.document.createElement("link").relList.supports("preload");
+            } catch (t) {
+              e = !1;
+            }
+            return function () {
+              return e;
+            };
+          })()),
+          (e.bindMediaToggle = function (t) {
+            var e = t.media || "all";
+            function a() {
+              t.addEventListener ? t.removeEventListener("load", a) : t.attachEvent && t.detachEvent("onload", a), t.setAttribute("onload", null), (t.media = e);
+            }
+            t.addEventListener ? t.addEventListener("load", a) : t.attachEvent && t.attachEvent("onload", a),
+              setTimeout(function () {
+                (t.rel = "stylesheet"), (t.media = "only x");
+              }),
+              setTimeout(a, 3e3);
+          }),
+          (e.poly = function () {
+            if (!e.support())
+              for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) {
+                var o = a[n];
+                "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") || (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o));
+              }
+          }),
+          !e.support())
+        ) {
+          e.poly();
+          var a = t.setInterval(e.poly, 500);
+          t.addEventListener
+            ? t.addEventListener("load", function () {
+                e.poly(), t.clearInterval(a);
+              })
+            : t.attachEvent &&
+              t.attachEvent("onload", function () {
+                e.poly(), t.clearInterval(a);
+              });
+        }
+        "undefined" != typeof exports ? (exports.loadCSS = loadCSS) : (t.loadCSS = loadCSS);
+      })("undefined" != typeof global ? global : this);
+    </script>
+
+    <link rel="preload" href="css/fonts.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="libs/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="libs/fancybox/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="libs/swiper/swiper.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="libs/ldld/ldld.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+
+    <link rel="preload" href="css/styleguide.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="css/main.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="css/media.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+
+    <style>
+      .overlay {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        background: #fff;
+        z-index: 9999;
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        transition: opacity 0.4s, top 0s 0.3s;
+      }
+
+      .ov-spin {
+        margin-top: 15px;
+        width: 20px;
+        height: 20px;
+        transition: margin 0.3s;
+        background: center / cover url("img/loader.svg") no-repeat;
+      }
+
+      .loaded .ov-spin {
+        margin-top: -20px;
+      }
+
+      .overlay .ov-logo {
+        transition: transform 0.5s;
+      }
+
+      .loaded .overlay .ov-logo {
+        transform: scale(3);
+      }
+
+      .loaded .overlay {
+        top: -110vh;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ldld full" style="font-size: 20px; color: #fff;"></div>
+    <!-- <div class="ldld default"></div> -->
+
+    <!-- <div class="overlay">
+      Logo
+      <div class="ov-spin"></div>
+    </div> -->
+    <header>
+      <div class="container df --aic --jcsb">
+        <a href="#" class="header__logo">
+          <img src="img/logo.svg" alt="" />
+        </a>
+        <div class="header__menu">
+          <ul class="clear-list">
+            <li><a href="#main">Головна</a></li>
+            <li><a href="#services">Послуги</a></li>
+            <li><a href="#reviews">Вiдгуки</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Контакти</a></li>
+          </ul>
+        </div>
+        <ul class="header__langs clear-list df aic langs">
+          <li class="langs__item">
+            <a href="#">RU</a>
+          </li>
+          <li class="langs__item --current">
+            <a href="#">UA</a>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="header__toggle header-toggle">
+        <div class="toggle is-openned">
+          
+        </div>
+        <div class="toggle is-closed">
+          
+        </div>
+      </div> -->
+    </header>
+    <section id="main" class="section">
+      <div class="" id="scene">
+        <img src="img/main/nut1.png" class="main-hero__nut main-hero__nut1" data-depth="0.2" alt="" />
+        <img src="img/main/nut2.png" class="main-hero__nut main-hero__nut2" data-depth="0.09" alt="" />
+        <img src="img/main/nut3.png" class="main-hero__nut main-hero__nut3" data-depth="0.05" alt="" />
+        <img src="img/main/nut4.png" class="main-hero__nut main-hero__nut4" data-depth="0.5" alt="" />
+      </div>
+      <div class="main-decors">
+        <img src="img/main/wheel.png" class="main-decors__wheel" alt="" />
+        <img src="img/main/wrench.png" class="main-decors__wrench" alt="" />
+      </div>
+      <div class="container">
+        <div class="main-hero">
+          <div class="main-hero__decors" id="scene">
+            <img src="img/main/light.svg" alt="" class="main-hero__light" />
+          </div>
+          <div class="main-hero__left">
+            <h1>Комплексний ремонт пневмопідвіски</h1>
+            <div class="main-text --mt-15 --fz-20 --fw-600 --grey">від 130$ протягом 3-4 години з гарантією до 2 рокiв</div>
+            <div class="main-button --mt-50 --relative">
+              <a href="#popup" data-fancybox="" class="button">Дізнатися ціну ремонту </a>
+            </div>
+          </div>
+          <div class="main-hero__img">
+            <img src="img/main/main.png" alt="" />
+          </div>
+        </div>
+
+        <div class="main-sub">
+          <h5 class="main-sub__title --fw-600 --center">Центр з ремонту та відновлення деталей пневмопідвіски</h5>
+          <div class="main-sub__slider --mt-45">
+            <div class="swiper-container swiper-main-sub">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="img/cars/audi.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cars/bentley.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cars/bmw.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cars/land_rover.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cars/mercedes.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cars/mm.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cars/vw.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/cars/prosche.png" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <button class="swiper-main-sub__next swiper-button-next"></button>
+            <button class="swiper-main-sub__prev swiper-button-prev"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="--center">Нашi послуги</h2>
+        <div class="services-list dg --gtc-4 --gap-20 --mt-50">
+          <div class="services-item">
+            <div class="services-item__img">
+              <img src="img/pnevmobalon.png" alt="" />
+            </div>
+            <div class="services-item__body">
+              <div>
+                <h4 class="services-item__title">
+                  Ремонт пневмобалонів
+                </h4>
+                <p class="services-item__text --mt-10 --grey">
+                  Ми працюємо з різними моделями, класами машин та їх виробниками
+                </p>
+              </div>
+
+              <div class="services-item__button --mt-35">
+                <a href="#popup" data-fancybox class="text-button">
+                  Дізнатись вартість →
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="services-item">
+            <div class="services-item__img">
+              <img src="img/amort.png" alt="" />
+            </div>
+            <div class="services-item__body">
+              <div class="abort-decor"></div>
+              <div>
+                <h4 class="services-item__title">
+                  Ремонт амортизаторів
+                </h4>
+                <p class="services-item__text --mt-10 --grey">
+                  Діагностика, реставрація та заміна амортизаторів у найкоротші терміни з гарантією 24 місяці.
+                </p>
+              </div>
+
+              <div class="services-item__button --mt-35">
+                <a href="#popup" data-fancybox class="text-button">
+                  Дізнатись вартість →
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="services-item">
+            <div class="services-item__img">
+              <img src="img/stoyka.png" alt="" />
+            </div>
+            <div class="services-item__body">
+              <div>
+                <h4 class="services-item__title">
+                  Ремонт пневмостійок
+                </h4>
+                <p class="services-item__text --mt-10 --grey">
+                  Комплексна діагностика, дефектування, профілактика і відновлення пневмостійок на професійному обладнанні.
+                </p>
+              </div>
+
+              <div class="services-item__button --mt-35">
+                <a href="#popup" data-fancybox class="text-button">
+                  Дізнатись вартість →
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="services-item">
+            <div class="services-item__img">
+              <img src="img/compressor.png" alt="" />
+            </div>
+            <div class="services-item__body">
+              <div>
+                <h4 class="services-item__title">
+                  Ремонт компресорів
+                </h4>
+                <p class="services-item__text --mt-10 --grey">
+                  Діагностика, ремонт та відновлення роботи компресорів, заміна поршневої групи, підшипників, якоря, щіткового вузла на нові.
+                </p>
+              </div>
+
+              <div class="services-item__button --mt-35">
+                <a href="#popup" data-fancybox class="text-button">
+                  Дізнатись вартість →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples" class="section">
+      <img src="img/examples-decor.png" class="examples-d examples-image" alt="" />
+      <img src="img/examples-light.svg" class="examples-d examples-light" alt="" />
+      <img src="img/main/nut4.png" class="examples-d examples-decor" alt="" />
+
+      <div class="container">
+        <div class="examples__left">
+          <h2>Наші клієнти заощадили від 285$ до <span>9470$</span></h2>
+          <div class="examples-subtitle">
+            Хочеш дiзнатися свою економію?
+          </div>
+
+          <div class="examples-form">
+            <form action="#">
+              <div class="input-wrap">
+                <input type="text" name="name" class="input-text" placeholder="Як вас звати:" required />
+              </div>
+              <div class="input-wrap">
+                <input type="text" name="name" class="input-text" placeholder="Ваш номер телефону:" required />
+              </div>
+              <div class="input-wrap --submit">
+                <button type="submit" class="button --full --big">Дізнатися економію</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="examples__right">
+          <div class="swiper-container swiper-examples">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="example-card">
+                  <div class="example-card__img">
+                    <img src="img/[temp]ex.jpg" alt="" />
+                  </div>
+                  <div class="example-card__body">
+                    <h4 class="example-card__title">День Porsche Panamera (3 машини одночасно в ремонті)</h4>
+                    <ul class="example-card__list --grey --mt-10">
+                      <li>ремонт 2-х передніх подушок</li>
+                      <li>відновлення 2-х задніх подушок</li>
+                      <li>ремонт пневмокомпресора</li>
+                      <li>калібрування пневмопідвіски</li>
+                    </ul>
+                    <div class="example-card__price --mt-20">Заощаджено 2850$</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="example-card">
+                  <div class="example-card__img">
+                    <img src="img/[temp]ex.jpg" alt="" />
+                  </div>
+                  <div class="example-card__body">
+                    <h4 class="example-card__title">День Porsche Panamera (3 машини одночасно в ремонті)</h4>
+                    <ul class="example-card__list --grey --mt-10">
+                      <li>ремонт 2-х передніх подушок</li>
+                      <li>відновлення 2-х задніх подушок</li>
+                      <li>ремонт пневмокомпресора</li>
+                      <li>калібрування пневмопідвіски</li>
+                    </ul>
+                    <div class="example-card__price --mt-20">Заощаджено 2850$</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="swiper-examples__next swiper-button-next"></button>
+            <button class="swiper-examples__prev swiper-button-prev"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="--center">Галерея виконаних робіт</h2>
+        <div class="swiper-gallery_wrapper">
+          <img src="img/wrench.png" class="swiper-gallery__decor" alt="" />
+          <div class="swiper-container swiper-gallery --mt-50">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="img/gallery/1.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gallery/2.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gallery/3.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gallery/1.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gallery/2.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/gallery/3.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <button class="swiper-gallery__next swiper-button-next"></button>
+          <button class="swiper-gallery__prev swiper-button-prev"></button>
+        </div>
+
+        <div class="gallery-button --mt-50 --center">
+          <a href="#popup" data-fancybox="" class="button">Дізнатись вартість</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section">
+      <img src="img/reviews-bg.png" alt="" class="reviews-bg" />
+      <div class="container">
+        <h2 class="--center">Відгуки</h2>
+
+        <div class="swiper-reviews_wrapper">
+          <img src="img/main/nut3.png" class="reviews-decor" alt="" />
+          <div class="swiper-reviews swiper-container --mt-50">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="review-card__date">
+                    24.06.2024
+                  </div>
+                  <div class="review-card__content">
+                    <div class="review-card__name">Денис (м. Київ)</div>
+                    <div class="review-card__car">Volkswagen Touareg</div>
+                    <div class="review-card__text">
+                      Приїхав на touareg 2009 року з проблемою, впала пневмопідвіска. Очікував значних витрат на ремонт, але в підсумку питання вирішилося за 20 хвилин, під час діагностики. Машину
+                      підняли і вартість потішила (порівняно з очікуваною). Сподобався підхід до роботи і відповідальність, буду вас рекомендувати. Дякую!
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="review-card__date">
+                    08.07.2024
+                  </div>
+                  <div class="review-card__content">
+                    <div class="review-card__name">Володимир (м. Київ)</div>
+                    <div class="review-card__car">Audi R8</div>
+                    <div class="review-card__text">
+                      Відмінний сервіс! За 30 хвилин замінили пробиту пневмоподушку на нову. Зробили діагностику блоків і видалили помилку. Приємний сервіс, пригостили смачною кавою, на ремонт
+                      гарантія 2 роки, якщо що, приїду сюди. Буду вас рекомендувати!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="swiper-reviews__next swiper-button-next"></button>
+          <button class="swiper-reviews__prev swiper-button-prev"></button>
+        </div>
+
+        <div class="--mt-50 --center">
+          <div class="reviews-button">
+            <img src="img/main/nut1.png" class="reviews-button__decor" alt="" />
+            <a href="#" class="button --large">Залишити відгук</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <h2 class="--center">
+          FAQ
+        </h2>
+
+        <div class="faq-list --mt-50">
+          <div class="ts-faq-accordion-content" itemscope itemtype="http://schema.org/FAQPage">
+            <div class="ts-faq-accordion-item" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+              <h5 class="ts-faq-item-question" itemprop="name">
+                Як скоротити витрати на ремонт пневмостійки?
+              </h5>
+              <div class="ts-faq-item-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer" style="display: none;">
+                <p class="ts-faq-item-answer" itemprop="text">
+                  Розрізняють два основних типи пневмостійок із закритими і відкритими пневмобалонами. У пневмостійках із закритими пневмобалонами манжети відпрацьовують свій ресурс, заявлений
+                  виробником, повністю, і ремонт пневмопідвіски, що складається з заміни пневмобалону, можна робити суворо за розкладом у рамках чергового техобслуговування. А в пневмостійках з
+                  відкритими пневмобалонами манжета потребує постійного догляду і захисту від шкідливого впливу бруду і реагентів, якими щедро посипають дороги взимку. І такі пневмобалони, на жаль,
+                  доводиться ремонтувати частіше, ніж хотілося б. А це витрати. Але є спосіб ці витрати різко скоротити по-перше, забезпечивши правильний догляд за такими пневмостійками, а по-друге
+                  встановити на них захист, перетворивши їх на пневмостійки із закритими пневморесорами. Ми робимо це в нашому сервісі в рамках ремонту пневмопідвіски.
+                </p>
+              </div>
+            </div>
+
+            <div class="ts-faq-accordion-item" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+              <h5 class="ts-faq-item-question" itemprop="name">
+                Чи варто ставити Arnott?
+              </h5>
+              <div class="ts-faq-item-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer" style="display: none;">
+                <p class="ts-faq-item-answer" itemprop="text">
+                  Розрізняють два основних типи пневмостійок із закритими і відкритими пневмобалонами. У пневмостійках із закритими пневмобалонами манжети відпрацьовують свій ресурс, заявлений
+                  виробником, повністю, і ремонт пневмопідвіски, що складається з заміни пневмобалону, можна робити суворо за розкладом у рамках чергового техобслуговування. А в пневмостійках з
+                  відкритими пневмобалонами манжета потребує постійного догляду і захисту від шкідливого впливу бруду і реагентів, якими щедро посипають дороги взимку. І такі пневмобалони, на жаль,
+                  доводиться ремонтувати частіше, ніж хотілося б. А це витрати. Але є спосіб ці витрати різко скоротити по-перше, забезпечивши правильний догляд за такими пневмостійками, а по-друге
+                  встановити на них захист, перетворивши їх на пневмостійки із закритими пневморесорами. Ми робимо це в нашому сервісі в рамках ремонту пневмопідвіски.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-button --mt-50 --center">
+          <a href="#" class="button --large">Більше питань</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <img src="img/contact-img.png" class="contact-img" alt="" />
+        <img src="img/contact-light.svg" class="contact-light" alt="" />
+        <div class="contact-wrapper">
+          <div class="contact-wrapper__left">
+            <h2>Контакти</h2>
+
+            <div class="contacts">
+              <div class="contact-item">
+                <div class="contact-item__title">Адреса:</div>
+                <div class="contact-item__value">м. Київ<br />вул. Чеська, 5А</div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item__title">Телефон:</div>
+                <div class="contact-item__value">
+                  <a href="tel:+380982914411">(098) 291 44 11</a><br />
+                  <a href="tel:+380932914411">(093) 291 44 11</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item__title">Email:</div>
+                <div class="contact-item__value">
+                  <a href="mailto:nevmogarage@gmail">pnevmogarage@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item__title">Режим роботи:</div>
+                <div class="contact-item__value">Пн-Пт: 10:00 - 20:00</div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-wrapper__right">
+            <img src="img/wrench2.png" class="contact-form__decor" alt="" />
+            <div class="contact-form">
+              <h3 class="contact-form__title">Зворотнiй зв'язок</h3>
+              <p class="contact-form__subtitle">Залиште ваш номер телефону, та отримайте консультацію</p>
+
+              <form action="#">
+                <div class="input-wrap">
+                  <input type="text" name="name" class="input-text" placeholder="Ваше ім’я*" required="" />
+                </div>
+                <div class="input-wrap">
+                  <input type="text" name="phone" class="input-text" placeholder="Ваш номер телефону*" required="" />
+                </div>
+                <div class="input-wrap">
+                  <input type="text" name="city" class="input-text" placeholder="Ваше місто*" required="" />
+                </div>
+                <div class="input-wrap --mt-30">
+                  <button type="submit" class="button --full">Дізнатися ціну ремонту</button>
+                  <div class="form-subtext --mt-10">
+                    Консультація майстра - безкоштовно!
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2364.0147744356755!2d30.541190882569875!3d50.413446912363085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf41e7a41ae3%3A0xf7dc244c5ec3a328!2zNUEsINCy0YPQu9C40YbRjyDQp9C10YHRjNC60LAsIDXQkCwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1725917145893!5m2!1suk!2sua"
+          width="600"
+          height="450"
+          style="border: 0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <a href="#">Політика конфіденційности</a>
+        <div class="copyright">© 2015-2024 Всі права захищені</div>
+        <a href="#">Угода користувача</a>
+      </div>
+    </footer>
+
+    <div id="popup" style="display: none;">
+      <div class="popup__content">
+        <div class="contact-form">
+          <h3 class="contact-form__title">Зворотнiй зв'язок</h3>
+          <p class="contact-form__subtitle">Залиште ваш номер телефону, та отримайте консультацію</p>
+
+          <form action="#">
+            <div class="input-wrap">
+              <input type="text" name="name" class="input-text" placeholder="Ваше ім’я*" required="" />
+            </div>
+            <div class="input-wrap">
+              <input type="text" name="phone" class="input-text" placeholder="Ваш номер телефону*" required="" />
+            </div>
+            <div class="input-wrap">
+              <input type="text" name="city" class="input-text" placeholder="Ваше місто*" required="" />
+            </div>
+            <div class="input-wrap --mt-30">
+              <button type="submit" class="button --full">Дізнатися ціну ремонту</button>
+              <div class="form-subtext --mt-10">
+                Консультація майстра - безкоштовно!
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/fancybox/jquery.fancybox.min.js"></script>
+    <script src="libs/aos/aos.js"></script>
+    <script src="libs/swiper/swiper.min.js"></script>
+    <script src="libs/ldld/ldld.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"
+      integrity="sha512-/6TZODGjYL7M8qb7P6SflJB/nTGE79ed1RfJk3dfm/Ib6JwCT4+tOfrrseEHhxkIhwG8jCl+io6eaiWLS/UX1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="js/common.js?ver=1"></script>
+  </body>
+</html>
