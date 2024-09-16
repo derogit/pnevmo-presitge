@@ -56,6 +56,7 @@ header {
   position: absolute;
   left: 0;
   width: 100vw;
+  z-index: 9;
 }
 .header__menu ul {
   display: flex;
@@ -500,6 +501,7 @@ button {
   background-image: url("data:image/svg+xml,%3Csvg width='25' height='16' viewBox='0 0 25 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L12.5 13L23 2' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E%0A");
   display: block;
   width: 25px;
+  flex: 0 0 25px;
   height: 16px;
   transition: transform 0.3s;
 }
@@ -695,4 +697,10 @@ footer a:hover {
 }
 .ts-faq-item-answer{
   padding-right: 60px;
+}
+
+.mobile-menu{
+  position: fixed;
+  top: -200vh;
+  opacity: 0;
 }

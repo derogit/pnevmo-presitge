@@ -2,18 +2,132 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
+  #examples .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-wrapper__left {
+    padding: 45px 30px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: linear-gradient(123deg, rgba(20, 22, 40, 0.1) 1.06%, rgba(18, 27, 48, 0.1) 69.63%, rgba(2, 35, 87, 0.1) 100%);
+    backdrop-filter: blur(11px);
+  }
 }
 @media only screen and (max-width: 1020px) {
 }
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
-    .header__toggle {
-        display: block
-    }
+  .header__toggle {
+    display: block;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 15px;
+    position: fixed;
+    padding: 20px 15px 20px 0;
+  }
+  header .container {
+    justify-content: flex-start;
+    max-width: unset;
+    margin-left: 0;
+  }
+
+  .services-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main-hero__img img {
+    width: 410px;
+  }
+  .main-hero__img {
+    right: -100px;
+    top: 210px;
+  }
+  #examples .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .examples__left {
+    max-width: calc(100vw - 30px);
+  }
 }
 
 /* Small Devices, .table_boxts */
 @media only screen and (max-width: 768px) {
+  .main-decors__wheel,
+  .main-decors__wrench {
+    display: none;
+  }
+  h1,
+  .h1 {
+    font-size: 35px;
+    line-height: normal;
+  }
+  h2,
+  .h2 {
+    font-size: 30px;
+  }
+  h4, .h4{
+
+font-size: 20px;
+  }
+  h5, .h5{
+    font-size: 18px;
+  }
+  .--fz-20,
+  .examples-subtitle {
+    font-size: 18px;
+  }
+  #main {
+    padding-top: 100px;
+  }
+  .main-sub {
+    margin-top: 300px;
+  }
+  .main-hero__img {
+    left: 0;
+    top: 280px;
+  }
+  .contact-wrapper{
+    flex-direction: column;
+  }
+  .contact-wrapper__right,.contact-wrapper__left{
+    width: 100%;
+  }
+  .contact-wrapper__right{
+    order: -1;
+  }
+  footer .container{
+    flex-direction: column;
+  }
+  .copyright{
+    order: 1;
+  }
+  .examples__right{
+    max-width: calc(100vw - 30px)
+  }
+  .services-list{
+    grid-template-columns: 1fr;
+  }
+  .swiper-button-next{
+    right: -5px;
+  }
+  .swiper-button-prev{
+    left: -5px;
+  }
+  .examples__right .swiper-button-next{
+    right: 0;
+  }
+  .examples__right .swiper-button-prev{
+    left: 0;
+  }
+  .swiper-gallery, .swiper-reviews{
+
+    max-width: calc(100% - 50px);
+  }
+  .swiper-main-sub{
+    padding: 0 20px;
+  }
 }
 
 /* Extra Small Devices, Phones */

@@ -6,7 +6,7 @@ $(window).on("load", function () {
 
 $(document).ready(function () {
   // (new ldLoader({root: ".ldld.full"})).on();
-
+  domShuffle();
   var scene = document.getElementById("scene");
   var parallaxInstance = new Parallax(scene);
 
@@ -24,7 +24,8 @@ $(document).ready(function () {
       prevEl: ".swiper-reviews__prev",
     },
     breakpoints: {
-      768: {
+      992: {
+        slidesPerView: 1,
         // direction: 'horizontal',
       },
     },
@@ -41,7 +42,11 @@ $(document).ready(function () {
     },
     breakpoints: {
       768: {
+        slidesPerView: 2,
         // direction: 'horizontal',
+      },
+      480: {
+        slidesPerView: 1,
       },
     },
   });
@@ -76,8 +81,14 @@ $(document).ready(function () {
       disableOnInteraction: false,
     },
     breakpoints: {
+      992: {
+        slidesPerView: 4,
+      },
       768: {
-        // direction: 'horizontal',
+        slidesPerView: 3,
+      },
+      480: {
+        slidesPerView: 2,
       },
     },
   });
@@ -131,5 +142,17 @@ $(document).ready(function () {
 const appHeight = () => {
   const doc = document.documentElement;
   doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+
+  domShuffle();
 };
 window.addEventListener("resize", appHeight);
+
+function domShuffle() {
+  if (screen.width < 992) {
+    $(".header__menu").appendTo($(".mobile-menu__menu"));
+    $(".header__langs").insertAfter($(".mobile-menu__menu"));
+  } else {
+    $(".header__menu").insertAfter($(".header__logo"));
+    $(".header__langs").insertAfter($(".header__menu"));
+  }
+}
