@@ -27,8 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // var_dump($arr);
 
     /* http://api.telegram.org/bot1384119688:AAGp1UIzjIJ9DBgFQ6YW776LBdZpPn8XPUY/getUpdates */
-    $token = get_env("TOKEN");
-    $chat_id = get_env("CHAT_ID");
+    $env = parse_ini_file('.env');
+    $token = $env["TOKEN"];
+    $chat_id = $env['CHAT_ID'];
 
     foreach ($arr as $key => $value) {
         $txt .= "<b>" . $key . "</b> " . $value . "\n";
