@@ -143,7 +143,7 @@ section.section {
 }
 .main-hero__nut2 {
   left: 79% !important;
-  top: 81.2% !important;
+  top: 71.2% !important;
 }
 .main-hero__nut3 {
   left: 32px !important;
@@ -659,7 +659,7 @@ footer a:hover {
   position: relative;
   z-index: 2;
 }
-#popup {
+#popup,#thxpopup {
   padding: 0;
   background: none;
 }
@@ -673,7 +673,9 @@ footer a:hover {
   filter: none;
   background: #171717;
 }
-#popup {
+
+#popup,
+#thxpopup {
   width: min(439px, 100%);
 }
 .header__menu li a {

@@ -139,18 +139,23 @@ $(document).ready(function () {
     $("html, body").animate({ scrollTop: dn + scrollCorrection }, 1000);
   });
 
-  $(".ajax-form").submit(function (e) {
+  $("form").submit(function (e) {
     var $form = $(this);
+    (new ldLoader({root: ".ldld.full"})).on();
     $.ajax({
-      type: $form.attr("method"),
-      url: $form.attr("action"),
+      type: "POST",
+      url: 'send.php',
       data: $form.serialize(),
     })
       .done(function () {
-        alert("Успешно");
+        // alert("Успешно");
+        $.fancybox.close();
+        $.fancybox.open($('#thxpopup'));
+        (new ldLoader({root: ".ldld.full"})).off();
       })
       .fail(function () {
         alert("Ошибка! Повторите попытку позже");
+        (new ldLoader({root: ".ldld.full"})).off();
       });
     e.preventDefault();
   });
