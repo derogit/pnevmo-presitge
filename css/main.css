@@ -56,7 +56,7 @@ header {
   position: absolute;
   left: 0;
   width: 100vw;
-  z-index: 9;
+  z-index: 100;
 }
 .header__menu ul {
   display: flex;
@@ -703,4 +703,17 @@ footer a:hover {
   position: fixed;
   top: -200vh;
   opacity: 0;
+  width: 100%;
+  height: var(--app-height);
+  background: #171717;
+  z-index: 99;
+  padding-top: 80px;
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: top .3s .3s, opacity .3s;
+}
+.mobile-menu.is-active{
+  top: 0;
+  opacity: 1;
+  transition: top .3s, opacity .3s;
 }

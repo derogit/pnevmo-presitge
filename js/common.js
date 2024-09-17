@@ -117,6 +117,12 @@ $(document).ready(function () {
       scrollCorrection = $(this).data("scroll-correction-mobile");
     }
 
+    if ($(".mobile-menu").hasClass("is-active")) {
+      $(".header-toggle").toggleClass("is-active");
+      $(".mobile-menu").toggleClass("is-active");
+      $(".header").toggleClass("is-active");
+    }
+
     var sc = $(this).attr("href"),
       dn = $(sc).offset().top;
     $("html, body").animate({ scrollTop: dn + scrollCorrection }, 1000);
