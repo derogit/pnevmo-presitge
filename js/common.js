@@ -10,6 +10,17 @@ $(document).ready(function () {
   var scene = document.getElementById("scene");
   var parallaxInstance = new Parallax(scene);
 
+
+
+  $('.js-more-faq').on('click', function(e){
+    e.preventDefault();
+
+    $('.faq-list .ts-faq-accordion-item.hidden').slideDown();
+    $(this).fadeOut();
+
+  })
+
+
   appHeight();
   const doc = document.documentElement;
   doc.style.setProperty("--app-const-height", `${window.innerHeight}px`);

@@ -212,6 +212,9 @@
   .contact-item {
     gap: 10px;
   }
+  .swiper-gallery .swiper-slide span a{
+    font-size: 15px;
+  }
 }
 
 /* Extra Small Devices, Phones */

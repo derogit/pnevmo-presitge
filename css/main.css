@@ -138,7 +138,6 @@ section.section {
   position: absolute;
 }
 .main-hero__nut1 {
-  
   left: 73.6% !important;
   top: 111px !important;
 }
@@ -147,7 +146,6 @@ section.section {
   top: 81.2% !important;
 }
 .main-hero__nut3 {
-  
   left: 32px !important;
   top: 63.6% !important;
 }
@@ -479,6 +477,9 @@ button {
   background: #2c2c2c;
   margin-bottom: 15px;
 }
+.ts-faq-accordion-item.hidden {
+  display: none;
+}
 
 .ts-faq-item-answer {
   color: rgba(255, 255, 255, 0.7);
@@ -562,7 +563,7 @@ button {
 .contact-form__title {
   text-align: center;
 }
-  .contact-form__subtitle {
+.contact-form__subtitle {
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
   font-size: 18px;
@@ -654,52 +655,51 @@ footer a:hover {
   top: 0;
 }
 
-#gallery .container{
+#gallery .container {
   position: relative;
   z-index: 2;
 }
-#popup{
+#popup {
   padding: 0;
   background: none;
 }
-.fancybox-button.fancybox-close-small{
+.fancybox-button.fancybox-close-small {
   color: #ff5602;
   top: 10px;
   right: 10px;
 }
-#popup .contact-form{
+#popup .contact-form {
   border: none;
   filter: none;
   background: #171717;
-
 }
-#popup{
+#popup {
   width: min(439px, 100%);
 }
-.header__menu li a{
-  transition: color .3s;
+.header__menu li a {
+  transition: color 0.3s;
 }
-.header__menu li a:hover{
+.header__menu li a:hover {
   color: #f50;
 }
-.examples__left h2 span{
+.examples__left h2 span {
   position: relative;
 }
-.examples__left h2 span:after{
-  content: '';
+.examples__left h2 span:after {
+  content: "";
   display: block;
   width: 100%;
   height: 3px;
-  background:#f50;
+  background: #f50;
   position: absolute;
   left: 0;
   bottom: -3px;
 }
-.ts-faq-item-answer{
+.ts-faq-item-answer {
   padding-right: 60px;
 }
 
-.mobile-menu{
+.mobile-menu {
   position: fixed;
   top: -200vh;
   opacity: 0;
@@ -710,10 +710,33 @@ footer a:hover {
   padding-top: 80px;
   padding-left: 15px;
   padding-right: 15px;
-  transition: top .3s .3s, opacity .3s;
+  transition: top 0.3s 0.3s, opacity 0.3s;
 }
-.mobile-menu.is-active{
+.mobile-menu.is-active {
   top: 0;
   opacity: 1;
-  transition: top .3s, opacity .3s;
+  transition: top 0.3s, opacity 0.3s;
+}
+.swiper-gallery .swiper-slide span {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 160%; /* 24px */
+  padding: 20px;
+  border-radius: 20px;
+  background: #1d1d1d;
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+.swiper-gallery .swiper-slide span a {
+  display: block;
+  color: #f50;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 12px;
+  outline: none;
 }
