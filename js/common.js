@@ -149,6 +149,7 @@ $(document).ready(function () {
     })
       .done(function () {
         // alert("Успешно");
+        $form.find("input").val("");
         $.fancybox.close();
         $.fancybox.open($('#thxpopup'));
         (new ldLoader({root: ".ldld.full"})).off();
