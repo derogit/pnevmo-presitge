@@ -34,7 +34,7 @@
     justify-content: space-between;
     padding-right: 15px;
     position: fixed;
-    padding: 20px 15px 20px 0;
+    padding: 15px 15px 15px 0;
   }
   header .container {
     justify-content: flex-start;
@@ -57,6 +57,12 @@
   }
   .examples__left {
     max-width: calc(100vw - 30px);
+  }
+  header.--scrolled{
+    background: #171717
+  }
+  header{
+    transition: background .3s;
   }
 }
 

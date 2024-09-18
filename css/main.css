@@ -742,3 +742,11 @@ footer a:hover {
   margin-top: 12px;
   outline: none;
 }
+
+.text-popup{
+  max-width: 900px;
+  color:#000;
+}
+.text-popup p{
+  font-weight: 400;
+}

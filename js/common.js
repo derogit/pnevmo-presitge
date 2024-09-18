@@ -10,16 +10,12 @@ $(document).ready(function () {
   var scene = document.getElementById("scene");
   var parallaxInstance = new Parallax(scene);
 
-
-
-  $('.js-more-faq').on('click', function(e){
+  $(".js-more-faq").on("click", function (e) {
     e.preventDefault();
 
-    $('.faq-list .ts-faq-accordion-item.hidden').slideDown();
+    $(".faq-list .ts-faq-accordion-item.hidden").slideDown();
     $(this).fadeOut();
-
-  })
-
+  });
 
   appHeight();
   const doc = document.documentElement;
@@ -141,22 +137,22 @@ $(document).ready(function () {
 
   $("form").submit(function (e) {
     var $form = $(this);
-    (new ldLoader({root: ".ldld.full"})).on();
+    new ldLoader({ root: ".ldld.full" }).on();
     $.ajax({
       type: "POST",
-      url: 'send.php',
+      url: "send.php",
       data: $form.serialize(),
     })
       .done(function () {
         // alert("Успешно");
         $form.find("input").val("");
         $.fancybox.close();
-        $.fancybox.open($('#thxpopup'));
-        (new ldLoader({root: ".ldld.full"})).off();
+        $.fancybox.open($("#thxpopup"));
+        new ldLoader({ root: ".ldld.full" }).off();
       })
       .fail(function () {
         alert("Ошибка! Повторите попытку позже");
-        (new ldLoader({root: ".ldld.full"})).off();
+        new ldLoader({ root: ".ldld.full" }).off();
       });
     e.preventDefault();
   });
@@ -171,6 +167,7 @@ const appHeight = () => {
 window.addEventListener("resize", appHeight);
 
 function domShuffle() {
+  console.log("domShuffle");
   if (screen.width < 992) {
     $(".header__menu").appendTo($(".mobile-menu__menu"));
     $(".header__langs").insertAfter($(".mobile-menu__menu"));
@@ -179,3 +176,12 @@ function domShuffle() {
     $(".header__langs").insertAfter($(".header__menu"));
   }
 }
+
+// window on scroll add to header class
+window.onscroll = function () {
+  if (window.pageYOffset > 20) {
+    $("header").addClass("--scrolled");
+  } else {
+    $("header").removeClass("--scrolled");
+  }
+};
