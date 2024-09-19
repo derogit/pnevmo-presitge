@@ -58,11 +58,11 @@
   .examples__left {
     max-width: calc(100vw - 30px);
   }
-  header.--scrolled{
-    background: #171717
+  header.--scrolled {
+    background: #171717;
   }
-  header{
-    transition: background .3s;
+  header {
+    transition: background 0.3s;
   }
 }
 
@@ -221,6 +221,26 @@
   .swiper-gallery .swiper-slide span a {
     font-size: 15px;
   }
+  .main-hero__light {
+    position: absolute;
+    left: -80%;
+    top: -100%;
+    width: 200%;
+    max-width: unset;
+    z-index: -1;
+  }
+  .main-hero__nut1 {
+    transform: translateY(calc(var(--app-scroll) / 5 * 1));
+  }
+  .main-hero__nut2 {
+    top: 39% !important;
+    transform: translateY(calc(var(--app-scroll) / 8 * -1));
+    left: 80% !important;
+  }
+  .main-hero__nut3 {
+    top: 61% !important;
+    transform: translateY(calc(var(--app-scroll) / 8 * -1));
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -272,11 +292,40 @@
   .main-hero__nut4 {
     display: none;
   }
-  .header__logo img{
+  .header__logo img {
     width: 150px;
   }
-  .example-card__body{
-    padding: 20px
+  .example-card__body {
+    padding: 20px;
+  }
+  .main-button {
+    margin-top: 290px;
+  }
+  .main-hero__img {
+    top: 260px;
+  }
+  .main-sub {
+    margin-top: 100px;
+  }
+  .main-hero__img {
+    left: 0 !important;
+    top: 250px !important;
+    transform: translate(calc(var(--app-scroll) / 28 * -1), calc(var(--app-scroll) / 28 * 1));
+  }
+  .reviews-button__decor {
+    transform: translateY(calc(var(--app-scroll) / 10 * -1 + 480px));
+  }
+  /* .contact-form__decor {
+margin-top: calc(var(--app-scroll) / 7 * -1 + 1050px);
+  } */
+  /*   
+  .contact-form__decor {
+    transform: translateY(calc(var(--app-scroll) / 7 * -1 + 1100px));
+  }  */
+
+  .swiper-examples .swiper-slide .example-card {
+    max-width: 85%;
+    margin-left: 8%;
   }
 }
 

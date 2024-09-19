@@ -67,6 +67,7 @@
       })("undefined" != typeof global ? global : this);
     </script>
 
+    <link rel="preload" href="lib/arcontactus.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="preload" href="css/fonts.css?ver=2" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="preload" href="libs/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="preload" href="libs/fancybox/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
@@ -123,6 +124,7 @@
   </head>
   <body>
     <div class="ldld full" style="z-index: 99999; color: #fff; font-size: 3em;"></div>
+    <div id="arcontactus"></div>
     <!-- <div class="ldld default"></div> -->
 
     <!-- <div class="overlay">
@@ -883,8 +885,8 @@
     <footer>
       <div class="container">
         <a href="#policy" data-fancybox="">Політика конфіденційности</a>
-        <div class="copyright">© 2015-2024 Всі права захищені</div>
-        <a href="#">Угода користувача</a>
+        <div class="copyright">© 2015 - 2024 Всі права захищені</div>
+        <!-- <a href="#">Угода користувача</a> -->
       </div>
     </footer>
 
@@ -926,170 +928,157 @@
 
     <div id="policy" class="text-popup" style="display: none;">
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif; margin-bottom: 2pt; text-align: center;">
-        <strong><span style="font-size: 21px; ">Політика конфіденційності</span></strong>
+        <strong><span style="font-size: 21px;">Політика конфіденційності</span></strong>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif; margin-bottom: 2pt; text-align: center;">
-        <strong><span style="font-size: 21px; ">pnevmo</span></strong
-        ><strong><span style="font-size: 21px; ">-</span></strong
-        ><strong><span style="font-size: 21px; ">prestige</span></strong
-        ><strong><span style="font-size: 21px; ">.</span></strong
-        ><strong><span style="font-size: 21px; ">com</span></strong
-        ><strong><span style="font-size: 21px; ">.</span></strong
-        ><strong><span style="font-size: 21px; ">ua</span></strong>
+        <strong><span style="font-size: 21px;">pnevmo</span></strong
+        ><strong><span style="font-size: 21px;">-</span></strong
+        ><strong><span style="font-size: 21px;">prestige</span></strong
+        ><strong><span style="font-size: 21px;">.</span></strong
+        ><strong><span style="font-size: 21px;">com</span></strong
+        ><strong><span style="font-size: 21px;">.</span></strong
+        ><strong><span style="font-size: 21px;">ua</span></strong>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif; margin-bottom: 2pt; text-align: center;">
-        <strong><span style="font-size: 21px; ">&nbsp;</span></strong>
+        <strong><span style="font-size: 21px;">&nbsp;</span></strong>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; ">Компанія&nbsp;</span><span style="font-size: 17px; ">Pnevmo</span
-        ><span style="font-size: 17px; ">&nbsp;</span><span style="font-size: 17px; ">Prestige</span
-        ><span style="font-size: 17px; ">&nbsp;</span
-        ><span style="font-size: 17px; ">приділяє велику увагу захисту персональних даних своїх користувачів, відповідно до&nbsp;</span
-        ><span style="font-size: 17px; ">&nbsp;</span
-        ><span style="font-size: 17px; "
+        <span style="font-size: 17px;">Компанія&nbsp;</span><span style="font-size: 17px;">Pnevmo</span><span style="font-size: 17px;">&nbsp;</span><span style="font-size: 17px;">Prestige</span
+        ><span style="font-size: 17px;">&nbsp;</span><span style="font-size: 17px;">приділяє велику увагу захисту персональних даних своїх користувачів, відповідно до&nbsp;</span
+        ><span style="font-size: 17px;">&nbsp;</span
+        ><span style="font-size: 17px;"
           >Закону України &laquo;Про захист персональних даних&raquo;, згідно якого під персональними даними розуміють відомості чи сукупність відомостей про фізичну особу, яка ідентифікована.</span
         >
       </p>
-      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px; ">&nbsp;</span></p>
+      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px;">&nbsp;</span></p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; ">Н</span
-        ><span style="font-size: 17px; "
+        <span style="font-size: 17px;">Н</span
+        ><span style="font-size: 17px;"
           >ам потрібні ваші контактні дані для того, щоб ми могли зв&apos;язатися з вами, підтвердити замовлення і доставити вам замовлений товар. Ваші персональні дані ми не передаємо третім особам і
           захищаємо їх конфіденційність.</span
         >
       </p>
-      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px; ">&nbsp;</span></p>
+      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px;">&nbsp;</span></p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <strong><span style="font-size: 17px; ">1. Загальні положення</span></strong>
+        <strong><span style="font-size: 17px;">1. Загальні положення</span></strong>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; "
+        <span style="font-size: 17px;"
           >1.1. Дана політика конфіденційності встановлює порядок отримання, зберігання, обробки, використання і розкриття персональних даних Користувача. Персональні дані Користувача ми отримуємо від
           Користувача при заповненні форми заявки на сайті.&nbsp;</span
         >
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; "
+        <span style="font-size: 17px;"
           >1.2. Конфіденційність персональних даних - обов&apos;язкова умова для дотримання інтернет-магазином доступу до персональних даних Користувача, з вимогою не допускати їх поширення без згоди
           Користувача.</span
         >
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; "
-          >1.3. Використання Користувачем сайту інтернет-магазину означає згоду з цією Політикою конфіденційності та умовами обробки персональних даних Користувача.</span
-        >
+        <span style="font-size: 17px;">1.3. Використання Користувачем сайту інтернет-магазину означає згоду з цією Політикою конфіденційності та умовами обробки персональних даних Користувача.</span>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; ">1.4. У випадку незгоди з умовами Політики Користувач повинен припинити використання сайту компанії.</span>
+        <span style="font-size: 17px;">1.4. У випадку незгоди з умовами Політики Користувач повинен припинити використання сайту компанії.</span>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; "
+        <span style="font-size: 17px;"
           >1.5. Користувач приймає умови цієї політики конфіденційності і враховує, що дана політика конфіденційності може час від часу змінюватися. Зміни, що вносяться до політики конфіденційності,
           публікуються на цій сторінці.</span
         >
       </p>
-      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px; ">&nbsp;</span></p>
+      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px;">&nbsp;</span></p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <strong><span style="font-size: 17px; ">2. Персональні дані</span></strong>
+        <strong><span style="font-size: 17px;">2. Персональні дані</span></strong>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; ">2.1. Компанія&nbsp;</span><span style="font-size: 17px; ">Pnevmo</span
-        ><span style="font-size: 17px; ">&nbsp;</span><span style="font-size: 17px; ">Prestige</span
-        ><span style="font-size: 17px; ">&nbsp;збирає персональні дані, а саме ім&rsquo;я, прізвище, e-mail та номер контактного телефону.</span>
+        <span style="font-size: 17px;">2.1. Компанія&nbsp;</span><span style="font-size: 17px;">Pnevmo</span><span style="font-size: 17px;">&nbsp;</span><span style="font-size: 17px;">Prestige</span
+        ><span style="font-size: 17px;">&nbsp;збирає персональні дані, а саме ім&rsquo;я, прізвище, e-mail та номер контактного телефону.</span>
       </p>
-      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px; ">&nbsp;</span></p>
+      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px;">&nbsp;</span></p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <strong><span style="font-size: 17px; ">3. Цілі збору і обробки персональних даних користувачів</span></strong>
-      </p>
-      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; "
-          >3.1. Компанія збирає і зберігає тільки ті персональні дані, які необхідні для надання послуг з ремонту, продажу, доставки замовлених вами товарів.</span
-        >
+        <strong><span style="font-size: 17px;">3. Цілі збору і обробки персональних даних користувачів</span></strong>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; ">3.2. Компанія&nbsp;</span><span style="font-size: 17px; ">Pnevmo</span
-        ><span style="font-size: 17px; ">&nbsp;</span><span style="font-size: 17px; ">Prestige</span
-        ><span style="font-size: 17px; ">&nbsp;</span
-        ><span style="font-size: 17px; "
+        <span style="font-size: 17px;">3.1. Компанія збирає і зберігає тільки ті персональні дані, які необхідні для надання послуг з ремонту, продажу, доставки замовлених вами товарів.</span>
+      </p>
+      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
+        <span style="font-size: 17px;">3.2. Компанія&nbsp;</span><span style="font-size: 17px;">Pnevmo</span><span style="font-size: 17px;">&nbsp;</span><span style="font-size: 17px;">Prestige</span
+        ><span style="font-size: 17px;">&nbsp;</span
+        ><span style="font-size: 17px;"
           >збирає дані для зв&apos;язку з Користувачем, в тому числі подання відповідного повідомлення про надання послуги, інформування Користувача про наявність товару, підтвердження замовлення,
           доставки замовлених Користувачем товарів, для зв&apos;язку кур&apos;єрської служби з Користувачем, а також для обробки запитів і заявок від Користувача.</span
         >
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; ">3.3. Обробка персональних даних Користувача здійснюється без обмеження терміну, будь-яким законним способом.</span>
+        <span style="font-size: 17px;">3.3. Обробка персональних даних Користувача здійснюється без обмеження терміну, будь-яким законним способом.</span>
       </p>
-      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px; ">&nbsp;</span></p>
+      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px;">&nbsp;</span></p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <strong><span style="font-size: 17px; ">4. Умови надання доступу до бази даних</span></strong>
-      </p>
-      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; ">4.1. Ми не передаємо персональні дані Користувача третім особам, крім випадків визначених законодавством України.</span>
+        <strong><span style="font-size: 17px;">4. Умови надання доступу до бази даних</span></strong>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; ">4.2. Зокрема Користувач погоджується з тим, що компанія&nbsp;</span
-        ><span style="font-size: 17px; ">Pnevmo</span><span style="font-size: 17px; ">&nbsp;</span
-        ><span style="font-size: 17px; ">Prestige</span><span style="font-size: 17px; ">&nbsp;</span
-        ><span style="font-size: 17px; "
+        <span style="font-size: 17px;">4.1. Ми не передаємо персональні дані Користувача третім особам, крім випадків визначених законодавством України.</span>
+      </p>
+      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
+        <span style="font-size: 17px;">4.2. Зокрема Користувач погоджується з тим, що компанія&nbsp;</span><span style="font-size: 17px;">Pnevmo</span><span style="font-size: 17px;">&nbsp;</span
+        ><span style="font-size: 17px;">Prestige</span><span style="font-size: 17px;">&nbsp;</span
+        ><span style="font-size: 17px;"
           >має права передавати персональні дані кур&apos;єрським службам, організаціям поштового зв&apos;язку, операторам електрозв&apos;язку, виключно з метою виконання замовлення Користувача,
           оформленого на сайті інтернет-магазину, включаючи доставку Товару.</span
         >
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; ">4.3. Компан</span><span style="font-size: 17px; ">ія</span
-        ><span style="font-size: 17px; "
+        <span style="font-size: 17px;">4.3. Компан</span><span style="font-size: 17px;">ія</span
+        ><span style="font-size: 17px;"
           >&nbsp;приймає необхідні організаційні та технічні заходи для захисту персональної інформації Користувача від неправомірного або випадкового доступу, знищення, перекручення, блокування,
           копіювання, поширення, а також від інших неправомірних дій третіх осіб.</span
         >
       </p>
-      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px; ">&nbsp;</span></p>
+      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px;">&nbsp;</span></p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <strong><span style="font-size: 17px; ">5. Зміна Користувачем персональної інформації</span></strong>
+        <strong><span style="font-size: 17px;">5. Зміна Користувачем персональної інформації</span></strong>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; "
-          >5.1 Користувач може в будь-який момент змінити, шляхом оновлення або доповнення наданої персональну інформацію або її частину.</span
-        >
+        <span style="font-size: 17px;">5.1 Користувач може в будь-який момент змінити, шляхом оновлення або доповнення наданої персональну інформацію або її частину.</span>
       </p>
-      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px; ">&nbsp;</span></p>
+      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px;">&nbsp;</span></p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <strong><span style="font-size: 17px; ">6. Зміна Політики конфіденційності</span></strong>
+        <strong><span style="font-size: 17px;">6. Зміна Політики конфіденційності</span></strong>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; "
+        <span style="font-size: 17px;"
           >6.1 Ми маємо право змінити умови Політики конфіденційності. У такому випадку, ми замінимо версію документа на сторінці &quot;Політика конфіденційності&quot;.</span
         >
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; "
+        <span style="font-size: 17px;"
           >6.2. Нова Політика конфіденційності вступає в силу з моменту її розміщення на сайті інтернет-магазину, якщо інше не передбачено новою редакцією Політики конфіденційності.&nbsp;</span
         >
       </p>
-      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px; ">&nbsp;</span></p>
+      <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;"><span style="font-size: 17px;">&nbsp;</span></p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <strong><span style="font-size: 17px; ">7. Зворотний зв&apos;язок. Питання та пропозиції</span></strong>
+        <strong><span style="font-size: 17px;">7. Зворотний зв&apos;язок. Питання та пропозиції</span></strong>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; ">7.1 Всі пропозиції або питання щодо цієї Політики конфіденційності слід повідомляти на сайті компанії&nbsp;</span
-        ><span style="font-size: 17px; ">Pnevmo</span><span style="font-size: 17px; ">&nbsp;</span
-        ><span style="font-size: 17px; ">Prestige</span><span style="font-size: 17px; ">.</span
+        <span style="font-size: 17px;">7.1 Всі пропозиції або питання щодо цієї Політики конфіденційності слід повідомляти на сайті компанії&nbsp;</span><span style="font-size: 17px;">Pnevmo</span
+        ><span style="font-size: 17px;">&nbsp;</span><span style="font-size: 17px;">Prestige</span><span style="font-size: 17px;">.</span
         ><span style="font-size: 17px; font-family: 'MS Gothic';"></span>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <strong><span style="font-size: 17px; ">Cookie-файли сторонніх сервісів і сервісів аналітики:</span></strong>
+        <strong><span style="font-size: 17px;">Cookie-файли сторонніх сервісів і сервісів аналітики:</span></strong>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; "
+        <span style="font-size: 17px;"
           >Для оперативної доставки, більш якісного відображення і детального аналізу контенту на Сайті, Компанія користується послугами, які є власністю інших сторонніх компаній, таких як
           Facebook,&nbsp;</span
-        ><span style="font-size: 17px; ">Instagram</span><span style="font-size: 17px; ">,&nbsp;</span
-        ><span style="font-size: 17px; ">Viber</span><span style="font-size: 17px; ">,&nbsp;</span
-        ><span style="font-size: 17px; ">Telegram</span><span style="font-size: 17px; ">&nbsp;та інші.</span>
+        ><span style="font-size: 17px;">Instagram</span><span style="font-size: 17px;">,&nbsp;</span><span style="font-size: 17px;">Viber</span><span style="font-size: 17px;">,&nbsp;</span
+        ><span style="font-size: 17px;">Telegram</span><span style="font-size: 17px;">&nbsp;та інші.</span>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; ">Наведені як приклад компанії можуть використовувати файли cookie на пристрої користувача, під час роботи на Сайті.</span>
+        <span style="font-size: 17px;">Наведені як приклад компанії можуть використовувати файли cookie на пристрої користувача, під час роботи на Сайті.</span>
       </p>
       <p style="margin: 0cm; font-size: 16px; font-family: 'Calibri', sans-serif;">
-        <span style="font-size: 17px; "
+        <span style="font-size: 17px;"
           >Слід звернути увагу, що Сайт не може вплинути на роботу файлів cookie, які використовуються цими сервісами. Всі необхідні відомості про їх використання можна дізнатися, відвідавши
           відповідний ресурс.</span
         >
@@ -1143,6 +1132,8 @@
       });
     </script>
 
+    <script src="lib/arcontactus.js"></script>
+    <script src="lib/script.js"></script>
     <script src="js/common.js?ver=2"></script>
   </body>
 </html>

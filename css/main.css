@@ -750,3 +750,6 @@ footer a:hover {
 .text-popup p{
   font-weight: 400;
 }
+.arcontactus-widget .arcontactus-message-button p{
+  display: none;
+}

@@ -7,8 +7,10 @@ $(window).on("load", function () {
 $(document).ready(function () {
   // (new ldLoader({root: ".ldld.full"})).on();
   domShuffle();
-  var scene = document.getElementById("scene");
-  var parallaxInstance = new Parallax(scene);
+  if (screen.width > 768) {
+    var scene = document.getElementById("scene");
+    var parallaxInstance = new Parallax(scene);
+  }
 
   $(".js-more-faq").on("click", function (e) {
     e.preventDefault();
@@ -184,4 +186,5 @@ window.onscroll = function () {
   } else {
     $("header").removeClass("--scrolled");
   }
+  document.documentElement.style.setProperty("--app-scroll", `${window.pageYOffset}px`);
 };
